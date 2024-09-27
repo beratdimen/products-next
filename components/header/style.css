@@ -1,0 +1,92 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+}
+
+.headerRight {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu, .open {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 15px;
+  list-style: none;
+  transition: right 0.3s ease-in-out;
+}
+
+.menu li, .open li {
+  margin: 15px 0;
+  text-transform: capitalize;
+}
+
+.menu li a, .open li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.menu li a:hover, .open li a:hover {
+  color: #0070f3;
+}
+
+.open, .open.false {
+  display: none;
+}
+
+.close-menu {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.hamburger,
+.close-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .headerCenter {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .close-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    z-index: 20;
+  }
+}
