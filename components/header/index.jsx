@@ -22,11 +22,7 @@ export default function Header() {
     <div className="header">
       <div className="headerLeft">
         <Link href="/">
-          <img
-            src="/img/berat-dimen-siyaah-logo.png"
-            alt="Logo"
-            width={200}
-          />
+          <img src="/img/berat-dimen-siyaah-logo.png" alt="Logo" width={200} />
         </Link>
       </div>
       <div className="headerCenter">
@@ -38,8 +34,8 @@ export default function Header() {
             <Link href={`/products`}>Home</Link>
           </li>
           {categories.length > 0 &&
-            categories.slice(0, 5).map((category) => (
-              <li>
+            categories.slice(0, 5).map((category, i) => (
+              <li key={i}>
                 <Link href={`/${category}`}>{category.replace("-", " ")}</Link>
               </li>
             ))}
@@ -64,8 +60,8 @@ export default function Header() {
           <Link href={`/products`}>Home</Link>
         </li>
         {categories.length > 0 &&
-          categories.slice(0, 5).map((category) => (
-            <li>
+          categories.slice(0, 5).map((category, i) => (
+            <li key={i}>
               <Link href={`/${category}`}>{category.replace("-", " ")}</Link>
             </li>
           ))}
